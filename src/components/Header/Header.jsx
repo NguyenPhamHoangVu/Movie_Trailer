@@ -20,11 +20,11 @@ const Header = ({ onSearch }) => {
           </a>
         </nav>
       </div>
-      <div className="flex items-center space-x-4">
+      <div className=" flex items-center space-x-4">
         <input
           type="text"
           placeholder="search"
-          className="p3 text-black"
+          className="p-2 text-black"
           onChange={(e) => {
             setTextSearch(e.target.value);
           }}
