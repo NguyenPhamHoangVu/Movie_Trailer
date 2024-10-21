@@ -10,13 +10,13 @@ const Header = ({ onSearch }) => {
         <h1 className="text-3xl font-bold text-red-500">Movie</h1>
         <nav className="flex items-center space-x-4">
           <a href="" className="text-white">
-            Home
+            Trang chủ
           </a>
           <a href="" className="text-white">
-            About
+            Giới thiệu
           </a>
           <a href="" className="text-white">
-            Contact
+            Liên Hệ
           </a>
         </nav>
       </div>
