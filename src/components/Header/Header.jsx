@@ -23,7 +23,7 @@ const Header = ({ onSearch }) => {
       <div className=" flex items-center space-x-4">
         <input
           type="text"
-          placeholder="search"
+          placeholder="Tìm kiếm phim..."
           className="p-2 text-black"
           onChange={(e) => {
             setTextSearch(e.target.value);
