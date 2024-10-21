@@ -34,7 +34,7 @@ const Header = ({ onSearch }) => {
           className="p-2 text-white bg-red-500 rounded"
           onClick={() => onSearch(textSearch)}
         >
-          Search
+          Tìm kiếm
         </button>
       </div>
     </div>
