@@ -9,18 +9,23 @@ const responsive = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 3000 },
     items: 10,
+    // Thêm khoảng cách
+    slidesToSlide: 2,
   },
   desktop: {
     breakpoint: { max: 3000, min: 1200 },
     items: 7,
+    slidesToSlide: 2,
   },
   tablet: {
     breakpoint: { max: 1200, min: 600 },
     items: 3,
+    slidesToSlide: 1,
   },
   mobile: {
     breakpoint: { max: 600, min: 0 },
     items: 2,
+    slidesToSlide: 1,
   },
 };
 
@@ -29,12 +34,18 @@ const MovieList = ({ title, data = [] }) => {
   return (
     <div className="text-white p-10 mb-10">
       <h2 className="uppercase text-xl font-bold mb-5">{title}</h2>
-      <Carousel responsive={responsive}>
+      <Carousel
+        responsive={responsive}
+        containerClass="carousel-container" // Thêm class cho container
+        itemClass="carousel-item" // Thêm class cho item
+        additionalTransfrom={0} // Ngăn chặn việc hiển thị item bị dính
+      >
         {Array.isArray(data) && data.length > 0 ? (
           data.map((item) => (
             <div
               key={item.id}
-              className="w-[200px] h-[300px] relative group"
+              className="relative group mx-2" // Giữ lại margin cho item
+              style={{ width: "calc(200px - 20px)", height: "300px" }} // Điều chỉnh chiều rộng
               onClick={() => {
                 handleTrailer(item.id);
               }}
@@ -44,7 +55,7 @@ const MovieList = ({ title, data = [] }) => {
                 <img
                   src={`${import.meta.env.VITE_IMG_URL}${item.backdrop_path}`}
                   alt={item.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-lg"
                 />
                 <div className="absolute bottom-4 left-2">
                   <p className="uppercase text-md">
